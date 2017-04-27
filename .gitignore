@@ -1,12 +1,12 @@
-*.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+x=x+1最低，因为它的执行过程如下：
+　　1. 读取右x的地址;
+　　2. x+1;
+　　3. 读取左x的地址;
+　　4. 将右值传给左边的x(编译器并不认为左右x的地址相同).
+　　x+=1其次，它的执行过程如下：
+　　1. 读取右x的地址;
+　　2. x=1;
+　　3. 将得到的值传给x(因为x的地址已经读出).
+　　x++最高，它的执行如下：
+　　1. 读取右x的地址;
+　　2. x自增1.
